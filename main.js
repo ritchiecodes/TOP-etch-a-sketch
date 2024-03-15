@@ -37,4 +37,10 @@ function changeColor(colorChoice) {
     drawColor = colorChoice;
 }
 
+function resetSketcher() {
+    let sketcher = document.querySelector('.sketcher');
+    let clearSquares = sketcher.querySelectorAll('div')
+    clearSquares.forEach((div) => div.style.backgroundColor = 'white');
+}
+
 createSketcher(16);
