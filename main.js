@@ -20,9 +20,10 @@ function createSketcher(size) {
 
 function changeGridSize(input) {
     if(input >= 2 && input <= 100) {
+        document.querySelector('.error').style.display = 'none';
         createSketcher(input);
     } else {
-        alert("Enter a number between 2 and 100.")
+        document.querySelector('.error').style.display = 'flex';
     }  
 }
 
@@ -57,4 +58,6 @@ document.querySelector('body').addEventListener('click', (e) => {
     }
 });
 
+
+document.querySelector('.error').style.display = 'none';
 createSketcher(16);
