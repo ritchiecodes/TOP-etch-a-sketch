@@ -17,22 +17,24 @@ function createSketcher(size) {
     }
 }
 
-createSketcher(16);
-
 function changeGridSize(input) {
     if(input >= 2 && input <= 100) {
         createSketcher(input);
     } else {
         alert("Enter a number between 2 and 100.")
-    }
-    
+    }  
 }
 
 function colorSquare() {
-    this.style.backgroundColor = drawColor;
+    if (drawColor === 'random') {
+        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+    } else {
+        this.style.backgroundColor = drawColor;
+    }
 }
 
 function changeColor(colorChoice) {
     drawColor = colorChoice;
 }
 
+createSketcher(16);
