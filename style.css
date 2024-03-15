@@ -30,3 +30,61 @@
     max-width: 600px;
     max-height: 600px;
 }
+
+.title {
+    display: flex;
+    justify-content: center;
+}
+
+.buttons {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 4px 20px;
+    margin: 0px 4px 4px 0px;
+    border-radius: 32px;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s;
+    background-color: white;
+    color: black;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.black:hover {
+    background: black;
+    color: white;
+}
+
+.red:hover {
+    background: red;
+    color: white;
+}
+
+.random:hover {
+    background: linear-gradient(to right top, #d16ba5, #9a9ae1, #5ffbf1);
+    color: white;
+}
+
+.eraser:hover {
+    background: lightgrey;
+    color: white;
+}
+
+input {
+    width: 30px;
+}
+
+.mode {
+    margin-bottom: 10px;
+}
+
+.error {
+    display: none;
+}
