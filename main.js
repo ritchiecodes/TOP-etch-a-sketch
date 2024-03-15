@@ -1,3 +1,5 @@
+let drawColor = 'black'
+
 function createSketcher(size) {
     let sketcher = document.querySelector('.sketcher');
     let clearSquares = sketcher.querySelectorAll('div')
@@ -8,9 +10,7 @@ function createSketcher(size) {
     let amount = size * size
     for(let i = 0; i < amount; i++) {
         let square = document.createElement('div');
-        square.addEventListener('mouseover', () => {
-            square.style.backgroundColor = 'black';
-        });
+        square.addEventListener('mouseover', colorSquare);
         square.style.backgroundColor = 'white'
         sketcher.insertAdjacentElement('beforeend', square);
 
@@ -27,3 +27,12 @@ function changeGridSize(input) {
     }
     
 }
+
+function colorSquare() {
+    this.style.backgroundColor = drawColor;
+}
+
+function changeColor(colorChoice) {
+    drawColor = colorChoice;
+}
+

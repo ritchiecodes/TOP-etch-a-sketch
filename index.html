@@ -14,13 +14,20 @@
         <div class="content">
             <div class="sketcher"></div>
             <div class="buttons">
-                <button>Black</button>
+                <button onclick="changeColor('black')">Black</button>
+                <button onclick="changeColor('red')">Red</button>
                 <button>Random</button>
-                <button>Eraser</button>
+                <button onclick="changeColor('white')">Eraser</button>
                 <button>Reset</button>
             </div>
-            <input type="text" placeholder="Size of Board" value="16">
-            <button>Set Size</button>
+            <div>
+                <input 
+                type="text" 
+                placeholder="Size of Board" 
+                value="16" 
+                onchange="changeGridSize(this.value)">
+                <button>Set Size</button>
+            </div>
         </div>
     </div>
 </body>
