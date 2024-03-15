@@ -1,4 +1,5 @@
-let drawColor = 'black'
+let drawColor = 'black';
+let click = true;
 
 function createSketcher(size) {
     let sketcher = document.querySelector('.sketcher');
@@ -26,10 +27,12 @@ function changeGridSize(input) {
 }
 
 function colorSquare() {
-    if (drawColor === 'random') {
-        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-    } else {
-        this.style.backgroundColor = drawColor;
+    if(click) {
+        if (drawColor === 'random') {
+            this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        } else {
+            this.style.backgroundColor = drawColor;
+        }
     }
 }
 
@@ -42,5 +45,16 @@ function resetSketcher() {
     let clearSquares = sketcher.querySelectorAll('div')
     clearSquares.forEach((div) => div.style.backgroundColor = 'white');
 }
+
+document.querySelector('body').addEventListener('click', (e) => {
+    if (e.target.tagName != 'BUTTON') {
+        click = !click;
+        if (click) {
+            document.querySelector('.mode').textContent = 'Mode: Drawing';
+        } else {
+            document.querySelector('.mode').textContent = 'Mode: Not Drawing';
+        }
+    }
+});
 
 createSketcher(16);
