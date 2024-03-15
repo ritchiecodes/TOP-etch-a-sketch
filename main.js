@@ -1,14 +1,17 @@
 function createSketcher(size) {
     let sketcher = document.querySelector('.sketcher');
-    let squares = sketcher.querySelectorAll('div')
-    squares.forEach((div) => div.remove());
+    let clearSquares = sketcher.querySelectorAll('div')
+    clearSquares.forEach((div) => div.remove());
     sketcher.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     sketcher.style.gridTemplateRows = `repeat(${size}, 1fr)`;
     
     let amount = size * size
     for(let i = 0; i < amount; i++) {
         let square = document.createElement('div');
-        square.style.backgroundColor = 'green'
+        square.addEventListener('mouseover', () => {
+            square.style.backgroundColor = 'black';
+        });
+        square.style.backgroundColor = 'white'
         sketcher.insertAdjacentElement('beforeend', square);
 
     }
